@@ -1,7 +1,9 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import { animated } from "react-spring"
+import { animated, useSpring, config } from "react-spring"
+
+import { Contained } from "../layout/elements"
 
 const StyledHeader = styled(animated.header)`
   position: fixed;
@@ -24,7 +26,26 @@ const Wrapper = styled.div`
 `
 
 const Navbar = () => {
-  return <StyledHeader></StyledHeader>
+  // Navbar Wobbly Animation
+  const NavBarSpring = useSpring({
+    config: config.wobbly,
+    opacity: 1,
+    height: isMobile ? "6rem" : "7rem",
+    from: {
+      opacity: 0,
+      height: "0rem",
+    },
+  })
+
+  return (
+    <StyledHeader style={NavBarSpring}>
+      <Contained>
+        <Wrapper>
+          <NavbarLogo />
+        </Wrapper>
+      </Contained>
+    </StyledHeader>
+  )
 }
 
 Navbar.propTypes = {

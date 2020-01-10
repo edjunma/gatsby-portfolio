@@ -1,6 +1,6 @@
 import React from "react"
 
-import Layout from "../components/layout"
+import Layout from "../components/layout/layout"
 
 // Import Portfolio Sections
 import Home from "../sections/home"

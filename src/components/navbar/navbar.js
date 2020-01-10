@@ -15,8 +15,24 @@ const StyledHeader = styled(animated.header)`
   z-index: 100;
 `
 
+const Wrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: all 0.2s ease-out;
+  overflow-x: hidden;
+`
+
 const Navbar = () => {
   return <StyledHeader></StyledHeader>
+}
+
+Navbar.propTypes = {
+  siteTitle: PropTypes.string,
+}
+
+Navbar.defaultProps = {
+  siteTitle: ``,
 }
 
 export default Navbar
